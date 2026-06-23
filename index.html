@@ -3,17 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detag</title>
+    <title>Detag Preview</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
   </head>
-  <body>
-    <nav class="mainMenu">
-      <a href="index.html" class="active">Main</a>
-      <a href="collection.html">Collection</a>
-      <a href="manifesto.html">Manifesto</a>
-      <a href="impact.html">Impact</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <body class="preview-page">
+    <main class="previewHero">
+      <video
+        class="previewHero__video"
+        src="video/preview.mov"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      <div class="previewHero__overlay"></div>
+      <nav class="previewNav" aria-label="Preview pages">
+        <a href="about.html">About</a>
+        <a href="collection.html">Collection</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="brochure.html">Brochure</a>
+      </nav>
+    </main>
   </body>
 </html>

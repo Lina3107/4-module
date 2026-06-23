@@ -3,17 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Collection</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
   </head>
-  <body>
-    <nav class="mainMenu">
-      <a href="index.html">Main</a>
-      <a href="collection.html" class="active">Collection</a>
-      <a href="manifesto.html">Manifesto</a>
-      <a href="impact.html">Impact</a>
-      <a href="contact.html">Contact</a>
+  <body class="collection-page">
+    <nav class="siteNav" aria-label="Primary">
+      <a class="siteNav__link" href="about.html">
+        <span class="siteNav__number">1</span>
+        <span class="siteNav__label">About</span>
+      </a>
+      <a class="siteNav__link is-active" href="collection.html">
+        <span class="siteNav__number">2</span>
+        <span class="siteNav__label">Collection</span>
+      </a>
+      <a class="siteNav__link" href="manifesto.html">
+        <span class="siteNav__number">3</span>
+        <span class="siteNav__label">Manifesto</span>
+      </a>
+      <a class="siteNav__link" href="brochure.html">
+        <span class="siteNav__number">4</span>
+        <span class="siteNav__label">Brochure</span>
+      </a>
     </nav>
+    <main class="collectionLayout">
+      <section class="collectionHero">
+        <img src="images/upcollection.svg" alt="Collection overview" />
+        <div class="collectionHero__catalog">
+          <div>
+            <p>New...............................................241</p>
+            <p>Lot №0 Shirts..................................6</p>
+            <p>Lot №1 Trousers...............................6</p>
+          </div>
+          <div>
+            <p>Lot №2 Tops....................................2</p>
+            <p>Lot №3 Jeans...................................3</p>
+            <p>Lot №4 Shorts.................................3</p>
+          </div>
+          <div>
+            <p>Lot №5 T-shirts...............................2</p>
+            <p>Lot №6 Jackets................................4</p>
+            <p>Lot №7 Knitwear..............................1</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="collectionSection collectionSection--shorts">
+        <div class="collectionSection__meta">
+          <span>Lot №4 Shorts</span>
+          <span>Blue shorts</span>
+        </div>
+        <div class="collectionShorts">
+          <div class="collectionShorts__editorial">
+            <img src="images/Blue shorts.svg" alt="Shorts editorial view" />
+          </div>
+          <div class="collectionShorts__product">
+            <img src="images/blueshortspng.svg" alt="Blue shorts product view" />
+          </div>
+        </div>
+      </section>
+
+      <section class="collectionStory">
+        <img src="images/collectionmid.svg" alt="Summer 2026 campaign" />
+        <div class="collectionStory__text">
+          <h2>Summer: 2026</h2>
+          <p>Honest &amp; Clean</p>
+        </div>
+      </section>
+
+      <section class="collectionSection collectionSection--tshirts">
+        <div class="collectionSection__meta collectionSection__meta--single">
+          <span>Lot №5 T-shirts</span>
+        </div>
+        <div class="collectionTees">
+          <div class="collectionTees__copy">
+            <p>
+              BLUE JEANS MADE<br />
+              FROM RECYCLED<br />
+              COTTON AND RECYCLED<br />
+              DENIM, WITH A SMALL<br />
+              AMOUNT OF RECYCLED<br />
+              POLYESTER FOR ADDED<br />
+              DURABILITY.
+            </p>
+          </div>
+          <div class="collectionTees__visual">
+            <img src="images/yellowsofa.svg" alt="White t-shirt styling" />
+          </div>
+        </div>
+      </section>
+
+      <section class="collectionStrip">
+        <div class="collectionStrip__viewport" data-lookbook-viewport>
+          <img
+            class="collectionStrip__image"
+            src="images/many.svg"
+            alt="Collection looks"
+          />
+          <button
+            class="collectionStrip__arrow"
+            type="button"
+            aria-label="Show more looks"
+            data-lookbook-next
+          >
+            &#8592;
+          </button>
+        </div>
+      </section>
+
+      <section class="collectionSection collectionSection--white-top">
+        <div class="collectionSection__meta">
+          <span>White top</span>
+          <span>Lot №5 T-shirts</span>
+        </div>
+        <div class="collectionWhiteTop">
+          <div class="collectionWhiteTop__product">
+            <img src="images/whitetshirtpng.svg" alt="White top product" />
+          </div>
+          <div class="collectionWhiteTop__detail">
+            <img src="images/whitetshirt.svg" alt="White top detail" />
+          </div>
+        </div>
+      </section>
+
+      <section class="collectionSection collectionSection--shirts">
+        <div class="collectionShirts">
+          <button
+            class="collectionShirts__card"
+            type="button"
+            data-shirt-preview="white"
+            aria-label="Show white shirt preview"
+          >
+            <img src="images/whiteshirt.svg" alt="White shirt" />
+          </button>
+          <button
+            class="collectionShirts__card"
+            type="button"
+            data-shirt-preview="black"
+            aria-label="Show black shirt preview"
+          >
+            <img src="images/blackshirt.svg" alt="Black shirt" />
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="shirtPreview" aria-hidden="true">
+      <img
+        class="shirtPreview__image shirtPreview__image--white"
+        src="images/whiteshirtpng.svg"
+        alt=""
+      />
+      <img
+        class="shirtPreview__image shirtPreview__image--black"
+        src="images/blackshirtpng.svg"
+        alt=""
+      />
+    </div>
   </body>
 </html>

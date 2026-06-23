@@ -3,17 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Manifesto</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
   </head>
-  <body>
-    <nav class="mainMenu">
-      <a href="index.html">Main</a>
-      <a href="collection.html">Collection</a>
-      <a href="manifesto.html" class="active">Manifesto</a>
-      <a href="impact.html">Impact</a>
-      <a href="contact.html">Contact</a>
+  <body class="manifesto-page">
+    <nav class="siteNav" aria-label="Primary">
+      <a class="siteNav__link" href="about.html">
+        <span class="siteNav__number">1</span>
+        <span class="siteNav__label">About</span>
+      </a>
+      <a class="siteNav__link" href="collection.html">
+        <span class="siteNav__number">2</span>
+        <span class="siteNav__label">Collection</span>
+      </a>
+      <a class="siteNav__link is-active" href="manifesto.html">
+        <span class="siteNav__number">3</span>
+        <span class="siteNav__label">Manifesto</span>
+      </a>
+      <a class="siteNav__link" href="brochure.html">
+        <span class="siteNav__number">4</span>
+        <span class="siteNav__label">Brochure</span>
+      </a>
     </nav>
+    <main class="manifestoLayout">
+      <section class="manifestoHero">
+        <img src="images/manifesto.svg" alt="Manifesto background" />
+
+        <div class="manifestoHero__content">
+          <h2>
+            THE PROCESS
+            <br />
+            BEHIND DETAG
+          </h2>
+          <p>
+            Brand creates clothing from materials that already exist. The process begins with the search for discarded,
+            <br />
+            unused, or forgotten textiles; leftover fabrics, old garments, damaged pieces, and materials that would otherwise
+            <br />
+            lose their value. Each textile is carefully selected, cleaned, studied, and sorted by texture, color, condition,
+            <br />
+            and potential use. Instead of hiding the past of the material, Detag keeps small traces of it visible, seams,
+            <br />
+            marks, fading, irregular edges, and signs of wear become part of the final design.
+          </p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

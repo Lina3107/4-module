@@ -1,0 +1,221 @@
+@media (max-width: 768px) {
+  :root {
+    --nav-size: 7.6vw;
+    --site-nav-size: 5.8vw;
+    --site-nav-label-size: 5vw;
+  }
+
+  .previewHero__overlay {
+    backdrop-filter: blur(0.6vw);
+  }
+
+  .previewNav {
+    flex-direction: column;
+    gap: 5vw;
+    text-align: center;
+    font-size: 7.6vw;
+  }
+
+  .siteNav {
+    top: 4vw;
+    width: 94vw;
+  }
+
+  .siteNav__link {
+    width: 100%;
+    min-height: 8vw;
+  }
+
+  .aboutHero__copy {
+    position: relative;
+    inset: auto;
+    padding: 16vw 5vw 0;
+  }
+
+  .aboutHero__line {
+    position: static;
+    display: block;
+    font-size: 5vw;
+    line-height: 0.96;
+  }
+
+  .aboutHero__line:nth-child(3),
+  .aboutHero__line:nth-child(6),
+  .aboutHero__line:nth-child(9),
+  .aboutHero__line:nth-child(11),
+  .aboutHero__line:nth-child(15) {
+    margin-left: 6vw;
+  }
+
+  .aboutHero__line:nth-child(4),
+  .aboutHero__line:nth-child(7),
+  .aboutHero__line:nth-child(12),
+  .aboutHero__line:nth-child(18) {
+    margin-left: 12vw;
+  }
+
+  .aboutHero__line:nth-child(5) {
+    margin-left: 18vw;
+  }
+
+  .aboutSubscribe {
+    position: static;
+    width: auto;
+    min-height: 0;
+    margin: 6vw 5vw 8vw;
+    padding: 4vw;
+    gap: 2.5vw;
+  }
+
+  .aboutSubscribe__header {
+    font-size: 3vw;
+  }
+
+  .aboutSubscribe input {
+    height: 8vw;
+    padding: 0 3vw;
+    font-size: 2.5vw;
+  }
+
+  .aboutSubscribe__submit {
+    width: 32vw;
+    height: 9vw;
+    margin-top: 4vw;
+    font-size: 3vw;
+  }
+
+  .brochureHero {
+    grid-template-columns: 1fr;
+    gap: 7vw;
+    padding: 18vw 5vw 10vw;
+  }
+
+  .brochureHero__meta {
+    font-size: 4.1vw;
+    text-align: center;
+  }
+
+  .brochureHero__meta--left,
+  .brochureHero__meta--right {
+    justify-self: center;
+    padding-left: 0;
+    max-width: none;
+  }
+
+  .brochureHero__meta--left p:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .brochureStack {
+    width: 86vw;
+    height: 116vw;
+  }
+
+  .brochureCard {
+    width: 61vw;
+    height: 86vw;
+  }
+
+  .collectionStrip__image {
+    width: 220%;
+  }
+
+  .collectionStrip__viewport[data-lookbook-index="1"] .collectionStrip__image {
+    transform: translateX(-24%);
+  }
+
+  .collectionStrip__viewport[data-lookbook-index="2"] .collectionStrip__image {
+    transform: translateX(-48%);
+  }
+
+  .collectionStrip__arrow {
+    right: 4vw;
+    width: 9vw;
+    height: 9vw;
+    font-size: 4.6vw;
+    opacity: 1;
+  }
+
+  .collectionHero__catalog {
+    top: 15vw;
+    left: 4vw;
+    right: 4vw;
+    grid-template-columns: 1fr;
+    gap: 2vw;
+    font-size: 3.5vw;
+  }
+
+  .collectionHero__catalog p {
+    white-space: normal;
+  }
+
+  .collectionSection {
+    padding: 6vw 0;
+  }
+
+  .collectionSection__meta,
+  .collectionSection__meta--single {
+    grid-template-columns: 1fr;
+    gap: 2vw;
+    margin: 0 4vw 4vw;
+    font-size: 4vw;
+  }
+
+  .collectionSection__meta span,
+  .collectionSection__meta span:first-child,
+  .collectionSection__meta span:last-child {
+    text-align: center;
+  }
+
+  .collectionShorts,
+  .collectionTees,
+  .collectionWhiteTop,
+  .collectionShirts {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  .collectionStory__text {
+    gap: 2vw;
+  }
+
+  .collectionStory__text h2 {
+    font-size: 7vw;
+  }
+
+  .collectionStory__text p {
+    font-size: 4vw;
+  }
+
+  .collectionTees__copy {
+    padding-left: 0;
+  }
+
+  .collectionTees__copy p {
+    font-size: 5.6vw;
+  }
+
+  .shirtPreview {
+    width: 36vw;
+    bottom: 4vw;
+  }
+
+  .manifestoHero__content {
+    padding: 17vw 6vw 0;
+    justify-content: flex-start;
+  }
+
+  .manifestoHero__content h2 {
+    font-size: 12.5vw;
+    line-height: 0.92;
+  }
+
+  .manifestoHero__content p {
+    width: 84vw;
+    margin-top: 4vw;
+    font-size: 2.8vw;
+    line-height: 1.08;
+  }
+}
