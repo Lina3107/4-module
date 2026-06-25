@@ -149,7 +149,7 @@ a {
 
 .siteFooter {
   z-index: 45;
-  display: flex;
+  display: none;
   justify-content: center;
   width: 100%;
   padding: 1vw 2vw;

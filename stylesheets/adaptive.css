@@ -97,12 +97,12 @@
 
   .brochureHero {
     grid-template-columns: 1fr;
-    gap: 7vw;
-    padding: 18vw 5vw 10vw;
+    gap: 5vw;
+    padding: 13vw 5vw 10vw;
   }
 
   .brochureHero__meta {
-    font-size: 4.1vw;
+    font-size: 3.5vw;
     text-align: center;
   }
 
@@ -113,18 +113,28 @@
     max-width: none;
   }
 
+  .brochureHero__meta--left {
+    display: none;
+  }
+
+  .brochureHero__meta--right {
+    display: none;
+  }
+
   .brochureHero__meta--left p:nth-child(2) {
     margin-left: 0;
   }
 
   .brochureStack {
-    width: 86vw;
-    height: 116vw;
+    order: 1;
+    width: 82vw;
+    height: 106vw;
+    justify-self: center;
   }
 
   .brochureCard {
-    width: 61vw;
-    height: 86vw;
+    width: 57vw;
+    height: 80vw;
   }
 
   .collectionStrip__image {
@@ -134,19 +144,19 @@
   }
 
   .collectionHero__catalog {
-    top: 15.8vw;
+    top: 14vw;
     left: 50%;
     right: auto;
     z-index: 42;
-    width: 92vw;
-    grid-template-columns: 1fr;
-    gap: 2vw;
-    font-size: 4.2vw;
+    width: 88vw;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5vw 4vw;
+    font-size: 2.65vw;
     transform: translateX(-50%);
   }
 
   .collectionHero__catalog p {
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .collection-page.is-shirts-catalog {
@@ -184,6 +194,215 @@
   .collectionShirtsCatalog__item:nth-child(4):hover img,
   .collectionShirtsCatalog img:hover {
     transform: scale(1.035);
+  }
+
+  .collection-page.is-trousers-catalog {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .collection-page.is-trousers-catalog .siteFooter {
+    position: static;
+  }
+
+  .collection-page.is-trousers-catalog .collectionTrousersCatalog {
+    grid-template-columns: 1fr;
+    row-gap: 9vw;
+    height: auto;
+    min-height: 100vh;
+    padding: 31vw 8vw 12vw;
+  }
+
+  .collectionTrousersCatalog .collectionCatalog__item {
+    justify-self: center;
+  }
+
+  .collectionTrousersCatalog img,
+  .collectionTrousersCatalog .collectionCatalog__item:nth-child(2) img {
+    max-width: 78vw;
+    height: 68vw;
+    transform: none;
+  }
+
+  .collectionTrousersCatalog .collectionCatalog__item:hover img {
+    transform: scale(1.035);
+  }
+
+  .collection-page.is-tops-catalog,
+  .collection-page.is-jeans-catalog,
+  .collection-page.is-shorts-catalog,
+  .collection-page.is-tshirts-catalog,
+  .collection-page.is-jackets-catalog,
+  .collection-page.is-knitwear-catalog {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .collection-page.is-tops-catalog .siteFooter,
+  .collection-page.is-jeans-catalog .siteFooter,
+  .collection-page.is-shorts-catalog .siteFooter,
+  .collection-page.is-tshirts-catalog .siteFooter,
+  .collection-page.is-jackets-catalog .siteFooter,
+  .collection-page.is-knitwear-catalog .siteFooter {
+    position: static;
+  }
+
+  .collection-page.is-tops-catalog .collectionCatalog.is-active,
+  .collection-page.is-jeans-catalog .collectionCatalog.is-active,
+  .collection-page.is-shorts-catalog .collectionCatalog.is-active,
+  .collection-page.is-tshirts-catalog .collectionCatalog.is-active,
+  .collection-page.is-jackets-catalog .collectionCatalog.is-active,
+  .collection-page.is-knitwear-catalog .collectionCatalog.is-active {
+    grid-template-columns: 1fr;
+    row-gap: 9vw;
+    height: auto;
+    min-height: 100vh;
+    padding: 31vw 8vw 12vw;
+  }
+
+  .collection-page.is-tops-catalog .collectionCatalog__item,
+  .collection-page.is-jeans-catalog .collectionCatalog__item,
+  .collection-page.is-shorts-catalog .collectionCatalog__item,
+  .collection-page.is-tshirts-catalog .collectionCatalog__item,
+  .collection-page.is-jackets-catalog .collectionCatalog__item,
+  .collection-page.is-knitwear-catalog .collectionCatalog__item {
+    justify-self: center;
+    margin: 0;
+  }
+
+  .collection-page.is-tops-catalog .collectionCatalog img,
+  .collection-page.is-tops-catalog .collectionCatalog--tops .collectionCatalog__item:nth-child(2) img {
+    max-width: 78vw;
+    height: 58vw;
+    transform: none;
+  }
+
+  .collection-page.is-jeans-catalog .collectionCatalog img,
+  .collection-page.is-jeans-catalog .collectionCatalog--jeans .collectionCatalog__item:nth-child(1) img {
+    max-width: 78vw;
+    height: 68vw;
+    transform: none;
+  }
+
+  .collection-page.is-shorts-catalog .collectionCatalog img {
+    max-width: 78vw;
+    height: 58vw;
+    transform: none;
+  }
+
+  .collection-page.is-tshirts-catalog .collectionCatalog img {
+    max-width: 78vw;
+    height: 54vw;
+    transform: none;
+  }
+
+  .collection-page.is-jackets-catalog .collectionCatalog img {
+    max-width: 78vw;
+    height: 58vw;
+    transform: none;
+  }
+
+  .collection-page.is-knitwear-catalog .collectionCatalog img {
+    max-width: 78vw;
+    height: 56vw;
+    transform: none;
+  }
+
+  .collection-page.is-tops-catalog .collectionCatalog__item:hover img,
+  .collection-page.is-jeans-catalog .collectionCatalog__item:hover img,
+  .collection-page.is-shorts-catalog .collectionCatalog__item:hover img,
+  .collection-page.is-tshirts-catalog .collectionCatalog__item:hover img,
+  .collection-page.is-jackets-catalog .collectionCatalog__item:hover img,
+  .collection-page.is-knitwear-catalog .collectionCatalog__item:hover img {
+    transform: scale(1.035);
+  }
+
+  .collection-page.is-shirt-detail {
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .collection-page.is-shirt-detail .collectionHero__catalog {
+    display: none;
+  }
+
+  .collection-page.is-shirt-detail .collectionProduct {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 23vw 6.7vw 10vw;
+    background: #f6f3ee;
+  }
+
+  .collectionProduct__close {
+    top: 13.8vw;
+    right: 6.7vw;
+    width: 4.4vw;
+    height: 4.4vw;
+  }
+
+  .collectionProduct__info {
+    order: 1;
+    width: 100%;
+    padding-top: 0;
+    font-size: 4vw;
+    line-height: 1.08;
+  }
+
+  .collectionProduct__info h1 {
+    margin-bottom: 9.4vw;
+  }
+
+  .collectionProduct__info p {
+    margin-bottom: 8.6vw;
+  }
+
+  .collectionProduct__options {
+    width: 100%;
+    margin-top: 7.4vw;
+    border-width: 0.22vw;
+    font-size: 4.1vw;
+  }
+
+  .collectionProduct__sizes {
+    border-bottom-width: 0.22vw;
+  }
+
+  .collectionProduct__sizes span {
+    height: 8.7vw;
+    border-right-width: 0.22vw;
+  }
+
+  .collectionProduct__color {
+    height: 8.7vw;
+    padding-bottom: 0.4vw;
+  }
+
+  .collectionProduct__soldOut {
+    order: 2;
+    align-self: center;
+    width: 58vw;
+    height: 10.7vw;
+    margin-top: 14vw;
+    border-width: 0.22vw;
+    font-size: 4.1vw;
+  }
+
+  .collectionProduct__image {
+    order: 3;
+    width: 100%;
+    height: 92vw;
+    margin-top: 9vw;
+    background: #ececea;
+  }
+
+  .collectionProduct__image img {
+    max-width: 82vw;
+    height: 78vw;
+    object-fit: contain;
   }
 
   .collectionSection {

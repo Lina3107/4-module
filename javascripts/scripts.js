@@ -63,6 +63,7 @@ if (brochureStack) {
 }
 
 const catalogButtons = document.querySelectorAll("[data-catalog-target]");
+const mobileCatalogLabels = document.querySelectorAll("[data-mobile-label]");
 const productView = document.querySelector(".collectionProduct");
 const productImage = productView?.querySelector("[data-product-image]");
 const productTitle = productView?.querySelector("[data-product-title]");
@@ -71,13 +72,35 @@ const productColor = productView?.querySelector("[data-product-color]");
 const productClose = productView?.querySelector(".collectionProduct__close");
 
 if (catalogButtons.length > 0) {
+  const mobileCatalogQuery = window.matchMedia("(max-width: 768px)");
   let productReturnTarget = "shirts";
+
+  mobileCatalogLabels.forEach((button) => {
+    button.dataset.fullLabel = button.textContent.trim();
+  });
+
+  const updateCatalogLabels = () => {
+    mobileCatalogLabels.forEach((button) => {
+      button.textContent = mobileCatalogQuery.matches
+        ? button.dataset.mobileLabel
+        : button.dataset.fullLabel;
+    });
+  };
+
+  updateCatalogLabels();
+  mobileCatalogQuery.addEventListener("change", updateCatalogLabels);
 
   const setCatalogView = (target) => {
     const catalogTargets = ["tops", "jeans", "shorts", "tshirts", "jackets", "knitwear"];
 
     document.body.classList.toggle("is-shirts-catalog", target === "shirts");
     document.body.classList.toggle("is-trousers-catalog", target === "trousers");
+    document.body.classList.toggle("is-tops-catalog", target === "tops");
+    document.body.classList.toggle("is-jeans-catalog", target === "jeans");
+    document.body.classList.toggle("is-shorts-catalog", target === "shorts");
+    document.body.classList.toggle("is-tshirts-catalog", target === "tshirts");
+    document.body.classList.toggle("is-jackets-catalog", target === "jackets");
+    document.body.classList.toggle("is-knitwear-catalog", target === "knitwear");
     document.body.classList.toggle("is-catalog-mode", catalogTargets.includes(target));
     document.body.classList.toggle("is-shirt-detail", target === "shirt-detail");
 
