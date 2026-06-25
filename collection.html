@@ -28,43 +28,367 @@
     </nav>
     <main class="collectionLayout">
       <section class="collectionHero">
-        <img src="images/upcollection.svg" alt="Collection overview" />
+        <img
+          src="images/upcollection.svg"
+          width="1920"
+          height="559"
+          decoding="async"
+          fetchpriority="high"
+          alt="Collection overview"
+        />
         <div class="collectionHero__catalog">
           <div>
-            <p>New...............................................241</p>
-            <p>Lot №0 Shirts..................................6</p>
-            <p>Lot №1 Trousers...............................6</p>
+            <p>
+              <button
+                class="collectionHero__catalogButton is-active"
+                type="button"
+                data-catalog-target="new"
+              >New...............................................27</button>
+            </p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="shirts"
+              >Lot №0 Shirts..................................6</button>
+            </p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="trousers"
+              >Lot №1 Trousers...............................3</button>
+            </p>
           </div>
           <div>
-            <p>Lot №2 Tops....................................2</p>
-            <p>Lot №3 Jeans...................................3</p>
-            <p>Lot №4 Shorts.................................3</p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="tops"
+              >Lot №2 Tops....................................2</button>
+            </p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="jeans"
+              >Lot №3 Jeans...................................3</button>
+            </p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="shorts"
+              >Lot №4 Shorts.................................3</button>
+            </p>
           </div>
           <div>
-            <p>Lot №5 T-shirts...............................2</p>
-            <p>Lot №6 Jackets................................4</p>
-            <p>Lot №7 Knitwear..............................1</p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="tshirts"
+              >Lot №5 T-shirts...............................2</button>
+            </p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="jackets"
+              >Lot №6 Jackets................................4</button>
+            </p>
+            <p>
+              <button
+                class="collectionHero__catalogButton"
+                type="button"
+                data-catalog-target="knitwear"
+              >Lot №7 Knitwear..............................1</button>
+            </p>
           </div>
         </div>
       </section>
 
+      <section class="collectionShirtsCatalog" data-catalog-view="shirts">
+        <button
+          class="collectionShirtsCatalog__item"
+          type="button"
+          data-catalog-target="shirt-detail"
+          data-product-return="shirts"
+          data-product-src="images/shirts1.svg"
+          data-product-title="Lot. 0 SHIRTS"
+          data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER"
+          data-product-color="Beige"
+          data-product-alt="Beige shirt"
+          aria-label="Open beige shirt"
+        >
+          <img
+            src="images/shirts1.svg"
+            width="516"
+            height="645"
+            loading="lazy"
+            decoding="async"
+            alt="Beige shirt"
+          />
+        </button>
+        <button
+          class="collectionShirtsCatalog__item"
+          type="button"
+          data-catalog-target="shirt-detail"
+          data-product-return="shirts"
+          data-product-src="images/shirts2.svg"
+          data-product-title="Lot. 0 SHIRTS"
+          data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER"
+          data-product-color="Denim blue"
+          data-product-alt="Denim blue shirt"
+          aria-label="Open denim blue shirt"
+        >
+          <img
+            src="images/shirts2.svg"
+            width="490"
+            height="469"
+            loading="lazy"
+            decoding="async"
+            alt="Denim blue shirt"
+          />
+        </button>
+        <button
+          class="collectionShirtsCatalog__item"
+          type="button"
+          data-catalog-target="shirt-detail"
+          data-product-return="shirts"
+          data-product-src="images/shirts3.svg"
+          data-product-title="Lot. 0 SHIRTS"
+          data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER"
+          data-product-color="Black"
+          data-product-alt="Black shirt"
+          aria-label="Open black shirt"
+        >
+          <img
+            src="images/shirts3.svg"
+            width="523"
+            height="477"
+            loading="lazy"
+            decoding="async"
+            alt="Black shirt"
+          />
+        </button>
+        <button
+          class="collectionShirtsCatalog__item"
+          type="button"
+          data-catalog-target="shirt-detail"
+          data-product-return="shirts"
+          data-product-src="images/shirts4.svg"
+          data-product-title="Lot. 0 SHIRTS"
+          data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER"
+          data-product-color="Dusty blue"
+          data-product-alt="Dusty blue shirt"
+          aria-label="Open dusty blue shirt"
+        >
+          <img
+            src="images/shirts4.svg"
+            width="519"
+            height="543"
+            loading="lazy"
+            decoding="async"
+            alt="Dusty blue shirt"
+          />
+        </button>
+        <button
+          class="collectionShirtsCatalog__item"
+          type="button"
+          data-catalog-target="shirt-detail"
+          data-product-return="shirts"
+          data-product-src="images/shirts5.svg"
+          data-product-title="Lot. 0 SHIRTS"
+          data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER"
+          data-product-color="Grey"
+          data-product-alt="Grey shirt"
+          aria-label="Open grey shirt"
+        >
+          <img
+            src="images/shirts5.svg"
+            width="545"
+            height="630"
+            loading="lazy"
+            decoding="async"
+            alt="Grey shirt"
+          />
+        </button>
+        <button
+          class="collectionShirtsCatalog__item"
+          type="button"
+          data-catalog-target="shirt-detail"
+          data-product-return="shirts"
+          data-product-src="images/shirts6.svg"
+          data-product-title="Lot. 0 SHIRTS"
+          data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER"
+          data-product-color="Light beige"
+          data-product-alt="Light beige shirt"
+          aria-label="Open light beige shirt"
+        >
+          <img
+            src="images/shirts6.svg"
+            width="533"
+            height="504"
+            loading="lazy"
+            decoding="async"
+            alt="Light beige shirt"
+          />
+        </button>
+      </section>
+
+      <section class="collectionTrousersCatalog" data-catalog-view="trousers">
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="trousers" data-product-src="images/trousersone.svg" data-product-title="Lot. 1 TROUSERS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Blue stripe" data-product-alt="Blue striped trousers">
+          <img src="images/trousersone.svg" width="350" height="580" loading="lazy" decoding="async" alt="Blue striped trousers" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="trousers" data-product-src="images/trouserstwo.svg" data-product-title="Lot. 1 TROUSERS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Charcoal" data-product-alt="Dark trousers">
+          <img src="images/trouserstwo.svg" width="404" height="653" loading="lazy" decoding="async" alt="Dark trousers" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="trousers" data-product-src="images/trousersthree.svg" data-product-title="Lot. 1 TROUSERS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Beige" data-product-alt="Beige trousers">
+          <img src="images/trousersthree.svg" width="319" height="572" loading="lazy" decoding="async" alt="Beige trousers" />
+        </button>
+      </section>
+
+      <section class="collectionCatalog collectionCatalog--tops" data-catalog-view="tops">
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="tops" data-product-src="images/topsone.svg" data-product-title="Lot. 2 TOPS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Black" data-product-alt="Black top">
+          <img src="images/topsone.svg" width="335" height="401" loading="lazy" decoding="async" alt="Black top" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="tops" data-product-src="images/topstwo.svg" data-product-title="Lot. 2 TOPS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Blue" data-product-alt="Blue top">
+          <img src="images/topstwo.svg" width="396" height="467" loading="lazy" decoding="async" alt="Blue top" />
+        </button>
+      </section>
+
+      <section class="collectionCatalog collectionCatalog--jeans" data-catalog-view="jeans">
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="jeans" data-product-src="images/jeansone.svg" data-product-title="Lot. 3 JEANS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Beige" data-product-alt="Beige jeans">
+          <img src="images/jeansone.svg" width="436" height="577" loading="lazy" decoding="async" alt="Beige jeans" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="jeans" data-product-src="images/jeanstwo.svg" data-product-title="Lot. 3 JEANS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Black" data-product-alt="Black jeans">
+          <img src="images/jeanstwo.svg" width="463" height="590" loading="lazy" decoding="async" alt="Black jeans" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="jeans" data-product-src="images/jeansrhree.svg" data-product-title="Lot. 3 JEANS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Blue" data-product-alt="Blue jeans">
+          <img src="images/jeansrhree.svg" width="403" height="596" loading="lazy" decoding="async" alt="Blue jeans" />
+        </button>
+      </section>
+
+      <section class="collectionCatalog collectionCatalog--shorts" data-catalog-view="shorts">
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="shorts" data-product-src="images/shortsone.svg" data-product-title="Lot. 4 SHORTS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="White" data-product-alt="White shorts">
+          <img src="images/shortsone.svg" width="518" height="553" loading="lazy" decoding="async" alt="White shorts" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="shorts" data-product-src="images/blueshortspng.svg" data-product-title="Lot. 4 SHORTS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Blue" data-product-alt="Blue denim shorts">
+          <img src="images/blueshortspng.svg" width="732" height="736" loading="lazy" decoding="async" alt="Blue denim shorts" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="shorts" data-product-src="images/shortsthree.svg" data-product-title="Lot. 4 SHORTS" data-product-composition="65% RECYCLED COTTON|30% RECYCLED DENIM|5% RECYCLED POLYESTER" data-product-color="Brown" data-product-alt="Brown shorts">
+          <img src="images/shortsthree.svg" width="558" height="562" loading="lazy" decoding="async" alt="Brown shorts" />
+        </button>
+      </section>
+
+      <section class="collectionCatalog collectionCatalog--tshirts" data-catalog-view="tshirts">
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="tshirts" data-product-src="images/tshirtsone.svg" data-product-title="Lot. 5 T-SHIRTS" data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER" data-product-color="Gray" data-product-alt="Gray t-shirt">
+          <img src="images/tshirtsone.svg" width="578" height="475" loading="lazy" decoding="async" alt="Gray t-shirt" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="tshirts" data-product-src="images/tshirtstwo.svg" data-product-title="Lot. 5 T-SHIRTS" data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER" data-product-color="Beige" data-product-alt="Beige t-shirt">
+          <img src="images/tshirtstwo.svg" width="614" height="507" loading="lazy" decoding="async" alt="Beige t-shirt" />
+        </button>
+      </section>
+
+      <section class="collectionCatalog collectionCatalog--jackets" data-catalog-view="jackets">
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="jackets" data-product-src="images/bluejacket.svg" data-product-title="Lot. 6 JACKETS" data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER" data-product-color="Blue" data-product-alt="Blue jacket">
+          <img src="images/bluejacket.svg" width="602" height="553" loading="lazy" decoding="async" alt="Blue jacket" />
+        </button>
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="jackets" data-product-src="images/greenjacket.svg" data-product-title="Lot. 6 JACKETS" data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER" data-product-color="Green" data-product-alt="Green jacket">
+          <img src="images/greenjacket.svg" width="560" height="509" loading="lazy" decoding="async" alt="Green jacket" />
+        </button>
+      </section>
+
+      <section class="collectionCatalog collectionCatalog--knitwear" data-catalog-view="knitwear">
+        <button class="collectionCatalog__item" type="button" data-catalog-target="shirt-detail" data-product-return="knitwear" data-product-src="images/sweater.svg" data-product-title="Lot. 7 KNITWEAR" data-product-composition="70% RECYCLED COTTON|30% RECYCLED POLYESTER" data-product-color="Yellow" data-product-alt="Yellow knitwear sweater">
+          <img src="images/sweater.svg" width="495" height="506" loading="lazy" decoding="async" alt="Yellow knitwear sweater" />
+        </button>
+      </section>
+
+      <section class="collectionProduct" data-catalog-view="shirt-detail">
+        <button
+          class="collectionProduct__close"
+          type="button"
+          aria-label="Back to shirts"
+          data-catalog-target="shirts"
+        >
+          <img src="images/no.svg" width="33" height="33" alt="" />
+        </button>
+        <div class="collectionProduct__image">
+          <img
+            data-product-image
+            src="images/shirts1.svg"
+            width="516"
+            height="645"
+            loading="lazy"
+            decoding="async"
+            alt="Beige shirt"
+          />
+        </div>
+        <div class="collectionProduct__info">
+          <h1 data-product-title>Lot. 0 SHIRTS</h1>
+          <p data-product-composition>
+            70% RECYCLED COTTON<br />
+            30% RECYCLED POLYESTER
+          </p>
+          <p>Model: 175cm&nbsp; size M</p>
+          <div class="collectionProduct__options" aria-label="Available options">
+            <div class="collectionProduct__sizes">
+              <span>S</span>
+              <span>M</span>
+              <span>L</span>
+            </div>
+            <div class="collectionProduct__color" data-product-color>Beige</div>
+          </div>
+          <button class="collectionProduct__soldOut" type="button">Sold out</button>
+        </div>
+      </section>
+
+      <div class="collectionDefaultContent" data-catalog-view="new">
       <section class="collectionSection collectionSection--shorts">
         <div class="collectionSection__meta">
-          <span>Lot №4 Shorts</span>
+          <button
+            class="collectionInlineLink"
+            type="button"
+            data-catalog-target="shorts"
+          >Lot №4 Shorts</button>
           <span>Blue shorts</span>
         </div>
         <div class="collectionShorts">
           <div class="collectionShorts__editorial">
-            <img src="images/Blue shorts.svg" alt="Shorts editorial view" />
+            <img
+              src="images/Blue shorts.svg"
+              width="997"
+              height="747"
+              loading="lazy"
+              decoding="async"
+              alt="Shorts editorial view"
+            />
           </div>
           <div class="collectionShorts__product">
-            <img src="images/blueshortspng.svg" alt="Blue shorts product view" />
+            <img
+              src="images/blueshortspng.svg"
+              width="732"
+              height="736"
+              loading="lazy"
+              decoding="async"
+              alt="Blue shorts product view"
+            />
           </div>
         </div>
       </section>
 
       <section class="collectionStory">
-        <img src="images/collectionmid.svg" alt="Summer 2026 campaign" />
+        <img
+          src="images/collectionmid.svg"
+          width="1919"
+          height="1064"
+          loading="lazy"
+          decoding="async"
+          alt="Summer 2026 campaign"
+        />
         <div class="collectionStory__text">
           <h2>Summer: 2026</h2>
           <p>Honest &amp; Clean</p>
@@ -73,7 +397,11 @@
 
       <section class="collectionSection collectionSection--tshirts">
         <div class="collectionSection__meta collectionSection__meta--single">
-          <span>Lot №5 T-shirts</span>
+          <button
+            class="collectionInlineLink"
+            type="button"
+            data-catalog-target="tshirts"
+          >Lot №5 T-shirts</button>
         </div>
         <div class="collectionTees">
           <div class="collectionTees__copy">
@@ -88,77 +416,70 @@
             </p>
           </div>
           <div class="collectionTees__visual">
-            <img src="images/yellowsofa.svg" alt="White t-shirt styling" />
+            <img
+              src="images/yellowsofa.svg"
+              width="865"
+              height="1075"
+              loading="lazy"
+              decoding="async"
+              alt="White t-shirt styling"
+            />
           </div>
         </div>
       </section>
 
       <section class="collectionStrip">
-        <div class="collectionStrip__viewport" data-lookbook-viewport>
+        <div class="collectionStrip__viewport">
           <img
             class="collectionStrip__image"
-            src="images/many.svg"
+            src="images/scroll.svg"
+            width="14722"
+            height="2856"
+            loading="lazy"
+            decoding="async"
             alt="Collection looks"
           />
-          <button
-            class="collectionStrip__arrow"
-            type="button"
-            aria-label="Show more looks"
-            data-lookbook-next
-          >
-            &#8592;
-          </button>
         </div>
       </section>
 
       <section class="collectionSection collectionSection--white-top">
         <div class="collectionSection__meta">
           <span>White top</span>
-          <span>Lot №5 T-shirts</span>
+          <button
+            class="collectionInlineLink"
+            type="button"
+            data-catalog-target="tshirts"
+          >Lot №5 T-shirts</button>
         </div>
         <div class="collectionWhiteTop">
           <div class="collectionWhiteTop__product">
-            <img src="images/whitetshirtpng.svg" alt="White top product" />
+            <img
+              src="images/whiteshirtcollections.svg"
+              width="655"
+              height="725"
+              loading="lazy"
+              decoding="async"
+              alt="White top product"
+            />
           </div>
           <div class="collectionWhiteTop__detail">
-            <img src="images/whitetshirt.svg" alt="White top detail" />
+            <img
+              src="images/whitetshirt.svg"
+              width="1056"
+              height="713"
+              loading="lazy"
+              decoding="async"
+              alt="White top detail"
+            />
           </div>
         </div>
       </section>
+      </div>
 
-      <section class="collectionSection collectionSection--shirts">
-        <div class="collectionShirts">
-          <button
-            class="collectionShirts__card"
-            type="button"
-            data-shirt-preview="white"
-            aria-label="Show white shirt preview"
-          >
-            <img src="images/whiteshirt.svg" alt="White shirt" />
-          </button>
-          <button
-            class="collectionShirts__card"
-            type="button"
-            data-shirt-preview="black"
-            aria-label="Show black shirt preview"
-          >
-            <img src="images/blackshirt.svg" alt="Black shirt" />
-          </button>
-        </div>
-      </section>
     </main>
 
-    <div class="shirtPreview" aria-hidden="true">
-      <img
-        class="shirtPreview__image shirtPreview__image--white"
-        src="images/whiteshirtpng.svg"
-        alt=""
-      />
-      <img
-        class="shirtPreview__image shirtPreview__image--black"
-        src="images/blackshirtpng.svg"
-        alt=""
-      />
-    </div>
+    <footer class="siteFooter">
+      <span>DETAG / EXISTING MATERIALS / LONG-TERM WEAR / 2026</span>
+    </footer>
   </body>
 </html>

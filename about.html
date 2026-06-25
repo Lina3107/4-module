@@ -50,18 +50,49 @@
           <span class="aboutHero__line">FOR LONG-TERM</span>
           <span class="aboutHero__line aboutHero__line--offset-2">WEAR</span>
         </div>
+        <div class="aboutHero__copy aboutHero__copy--repeat" aria-hidden="true">
+          <span class="aboutHero__line">DETAG</span>
+          <span class="aboutHero__line">IS A CONSCIOUS</span>
+          <span class="aboutHero__line aboutHero__line--offset-1">CLOTHING</span>
+          <span class="aboutHero__line aboutHero__line--offset-2">BRAND</span>
+          <span class="aboutHero__line aboutHero__line--offset-3">CREATED FROM</span>
+          <span class="aboutHero__line aboutHero__line--offset-1">RECYCLED</span>
+          <span class="aboutHero__line aboutHero__line--offset-2">AND EXISTING</span>
+          <span class="aboutHero__line">MATERIALS.</span>
+          <span class="aboutHero__line aboutHero__line--offset-1">WE REDUCE VISUAL</span>
+          <span class="aboutHero__line">NOISE,</span>
+          <span class="aboutHero__line aboutHero__line--offset-1">RETHINK</span>
+          <span class="aboutHero__line aboutHero__line--offset-2">FAMILIAR</span>
+          <span class="aboutHero__line">FORMS</span>
+          <span class="aboutHero__line">AND CREATE</span>
+          <span class="aboutHero__line aboutHero__line--offset-1">TIMELESS</span>
+          <span class="aboutHero__line">PIECES</span>
+          <span class="aboutHero__line">FOR LONG-TERM</span>
+          <span class="aboutHero__line aboutHero__line--offset-2">WEAR</span>
+        </div>
 
-        <form class="aboutSubscribe">
+        <form class="aboutSubscribe" data-subscribe-form>
           <img
             class="aboutSubscribe__background"
             src="images/step.svg"
             alt=""
           />
-          <input type="text" name="name" placeholder="Name*" />
-          <input type="email" name="email" placeholder="E-mail address*" />
+          <button
+            class="aboutSubscribe__close"
+            type="button"
+            aria-label="Close subscription form"
+            data-subscribe-close
+          >
+            <img src="images/crest.svg" alt="" />
+          </button>
+          <input type="text" name="name" placeholder="Name*" required />
+          <input type="email" name="email" placeholder="E-mail address*" required />
           <button class="aboutSubscribe__submit" type="submit">Subscribe</button>
         </form>
       </section>
     </main>
+    <footer class="siteFooter">
+      <span>DETAG / EXISTING MATERIALS / LONG-TERM WEAR / 2026</span>
+    </footer>
   </body>
 </html>

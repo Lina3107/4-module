@@ -117,32 +117,21 @@
   }
 
   .collectionStrip__image {
-    width: 220%;
-  }
-
-  .collectionStrip__viewport[data-lookbook-index="1"] .collectionStrip__image {
-    transform: translateX(-24%);
-  }
-
-  .collectionStrip__viewport[data-lookbook-index="2"] .collectionStrip__image {
-    transform: translateX(-48%);
-  }
-
-  .collectionStrip__arrow {
-    right: 4vw;
-    width: 9vw;
-    height: 9vw;
-    font-size: 4.6vw;
-    opacity: 1;
+    width: 255vw;
+    min-width: 255vw;
+    margin-left: -7vw;
   }
 
   .collectionHero__catalog {
-    top: 15vw;
-    left: 4vw;
-    right: 4vw;
+    top: 15.8vw;
+    left: 50%;
+    right: auto;
+    z-index: 42;
+    width: 92vw;
     grid-template-columns: 1fr;
     gap: 2vw;
-    font-size: 3.5vw;
+    font-size: 4.2vw;
+    transform: translateX(-50%);
   }
 
   .collectionHero__catalog p {
@@ -158,19 +147,34 @@
     grid-template-columns: 1fr;
     gap: 2vw;
     margin: 0 4vw 4vw;
-    font-size: 4vw;
+    font-size: 4.2vw;
+  }
+
+  .collectionSection--shorts .collectionSection__meta {
+    grid-template-columns: 1fr;
+    gap: 2vw;
+    margin: 0 4vw 4vw;
   }
 
   .collectionSection__meta span,
   .collectionSection__meta span:first-child,
-  .collectionSection__meta span:last-child {
+  .collectionSection__meta span:last-child,
+  .collectionSection--shorts .collectionSection__meta span:first-child {
     text-align: center;
+  }
+
+  .collectionSection--shorts .collectionSection__meta span:last-child,
+  .collectionShorts__product {
+    transform: none;
+  }
+
+  .collectionShorts__product {
+    padding-top: 0;
   }
 
   .collectionShorts,
   .collectionTees,
-  .collectionWhiteTop,
-  .collectionShirts {
+  .collectionWhiteTop {
     grid-template-columns: 1fr;
     gap: 4vw;
     padding-left: 4vw;
@@ -195,11 +199,6 @@
 
   .collectionTees__copy p {
     font-size: 5.6vw;
-  }
-
-  .shirtPreview {
-    width: 36vw;
-    bottom: 4vw;
   }
 
   .manifestoHero__content {

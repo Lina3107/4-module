@@ -147,14 +147,62 @@ a {
   pointer-events: auto;
 }
 
+.siteFooter {
+  z-index: 45;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1vw 2vw;
+  font-family: "Helvetica Neue Cyr", sans-serif;
+  font-size: 0.78vw;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(84, 84, 84, 0.72);
+}
+
+.about-page .siteFooter,
+.manifesto-page .siteFooter,
+.brochure-page .siteFooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.about-page .siteFooter {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.collection-page .siteFooter {
+  background: #f6f3ee;
+}
+
+.collection-page.is-shirts-catalog,
+.collection-page.is-trousers-catalog,
+.collection-page.is-catalog-mode {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.collection-page.is-shirts-catalog .siteFooter,
+.collection-page.is-trousers-catalog .siteFooter,
+.collection-page.is-catalog-mode .siteFooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
 .collection-page {
   background: #f6f3ee;
   color: #545454;
+  overflow-x: hidden;
 }
 
 .about-page {
   background: #f0ece5;
   color: #fff;
+  overflow: hidden;
 }
 
 .about-page .siteNav__link {
@@ -171,6 +219,7 @@ a {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  --about-copy-loop: 60vw;
 }
 
 .aboutHero img {
@@ -185,71 +234,194 @@ a {
 .aboutHero__copy {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(var(--about-copy-start, 0));
+  animation: aboutCopyScroll 18s linear infinite;
+}
+
+.aboutHero__copy--repeat {
+  --about-copy-start: calc(var(--about-copy-loop) * -1);
+  --about-copy-end: 0;
 }
 
 .aboutHero__line {
   position: absolute;
   font-family: "Helvetica Neue Cyr", sans-serif;
-  font-size: 3.08vw;
+  font-size: 2.68vw;
   line-height: 0.98;
-  letter-spacing: -0.03em;
-  word-spacing: 0.08em;
+  letter-spacing: -0.015em;
+  word-spacing: 0.12em;
   color: #fff;
 }
 
-.aboutHero__line:nth-child(1) { top: 0.6vw; left: 4vw; }
-.aboutHero__line:nth-child(2) { top: 4.2vw; left: 4vw; }
-.aboutHero__line:nth-child(3) { top: 11.5vw; left: 4vw; }
-.aboutHero__line:nth-child(4) { top: 15.1vw; left: 9vw; }
-.aboutHero__line:nth-child(5) { top: 18.7vw; left: 13.1vw; }
-.aboutHero__line:nth-child(6) { top: 22.3vw; left: 4vw; }
-.aboutHero__line:nth-child(7) { top: 25.8vw; left: 8.2vw; }
-.aboutHero__line:nth-child(8) { top: 34.1vw; left: 4vw; }
-.aboutHero__line:nth-child(9) { top: 37.5vw; left: 8vw; }
-.aboutHero__line:nth-child(10) { top: 41vw; left: 4vw; }
-.aboutHero__line:nth-child(11) { top: 49.2vw; left: 6.6vw; }
-.aboutHero__line:nth-child(12) { top: 52.7vw; left: 13vw; }
-.aboutHero__line:nth-child(13) { top: 56.2vw; left: 4vw; }
-.aboutHero__line:nth-child(14) { top: 66.8vw; left: 4vw; }
-.aboutHero__line:nth-child(15) { top: 70.1vw; left: 12vw; }
-.aboutHero__line:nth-child(16) { top: 73.4vw; left: 2.6vw; }
-.aboutHero__line:nth-child(17) { top: 76.7vw; left: 2.6vw; }
-.aboutHero__line:nth-child(18) { top: 80vw; left: 18.2vw; }
+.aboutHero__line:nth-child(1) {
+  top: 0.1vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(2) {
+  top: 2.75vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(3) {
+  top: 8.25vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(4) {
+  top: 10.9vw;
+  left: 8.4vw;
+}
+.aboutHero__line:nth-child(5) {
+  top: 13.55vw;
+  left: 13.25vw;
+}
+.aboutHero__line:nth-child(6) {
+  top: 16.2vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(7) {
+  top: 18.85vw;
+  left: 8.35vw;
+}
+.aboutHero__line:nth-child(8) {
+  top: 24.55vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(9) {
+  top: 27.35vw;
+  left: 8.35vw;
+}
+.aboutHero__line:nth-child(10) {
+  top: 30.15vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(11) {
+  top: 35.85vw;
+  left: 8.35vw;
+}
+.aboutHero__line:nth-child(12) {
+  top: 38.5vw;
+  left: 13.3vw;
+}
+.aboutHero__line:nth-child(13) {
+  top: 41.15vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(14) {
+  top: 46.55vw;
+  left: 4.8vw;
+}
+.aboutHero__line:nth-child(15) {
+  top: 49.2vw;
+  left: 12.55vw;
+}
+.aboutHero__line:nth-child(16) {
+  top: 51.85vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(17) {
+  top: 54.5vw;
+  left: 4.1vw;
+}
+.aboutHero__line:nth-child(18) {
+  top: 57.15vw;
+  left: 20.4vw;
+}
 
 .aboutSubscribe {
   position: absolute;
-  right: 8.2vw;
+  right: 8.8vw;
   bottom: 0;
-  width: 23.3vw;
-  height: 15.8vw;
+  z-index: 60;
+  width: 23.2vw;
+  height: 16.65vw;
   color: #545454;
+  overflow: hidden;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.aboutSubscribe.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.6vw);
 }
 
 .aboutSubscribe__background {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.aboutSubscribe__close {
+  position: absolute;
+  top: 7.4%;
+  right: 6.4%;
+  bottom: auto;
+  left: auto;
+  z-index: 2;
+  width: 1vw;
+  height: 1vw;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.aboutSubscribe__close img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .aboutSubscribe input {
   position: absolute;
-  left: 7.6%;
-  width: 85%;
-  height: 10.8%;
+  left: 50%;
+  z-index: 2;
+  width: 86%;
+  height: 13.4%;
   border: 0.078125vw solid rgba(84, 84, 84, 0.45);
+  box-sizing: border-box;
   background: transparent;
-  padding: 0 0.72vw;
+  padding: 0 0.95vw;
   font-family: "Helvetica Neue Cyr", sans-serif;
-  font-size: 0.68vw;
+  font-size: 0.92vw;
   color: #545454;
+  transform: translateX(-50%);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.aboutSubscribe input:focus,
+.aboutSubscribe input:not(:placeholder-shown) {
+  border-color: rgba(84, 84, 84, 0.68);
+  outline: none;
+  background: rgba(84, 84, 84, 0.055);
+}
+
+.aboutSubscribe input:-webkit-autofill,
+.aboutSubscribe input:-webkit-autofill:hover,
+.aboutSubscribe input:-webkit-autofill:focus {
+  border-color: rgba(84, 84, 84, 0.68);
+  -webkit-text-fill-color: #545454;
+  box-shadow: 0 0 0 1000px rgba(84, 84, 84, 0.055) inset;
+  transition: background-color 9999s ease-out;
 }
 
 .aboutSubscribe input[name="name"] {
-  top: 27.6%;
+  top: 27.3%;
 }
 
 .aboutSubscribe input[name="email"] {
-  top: 45.3%;
+  top: 45.4%;
 }
 
 .aboutSubscribe input::placeholder {
@@ -259,20 +431,40 @@ a {
 
 .aboutSubscribe__submit {
   position: absolute;
-  left: 31.7%;
-  top: 78.8%;
-  width: 37.3%;
-  height: 11.2%;
+  left: 50%;
+  top: 77.2%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42.4%;
+  height: 13.7%;
   border: 0.078125vw solid rgba(84, 84, 84, 0.45);
+  box-sizing: border-box;
   background: transparent;
   font-family: "Helvetica Neue Cyr", sans-serif;
-  font-size: 0.78vw;
+  font-size: 1.02vw;
   color: #545454;
   cursor: pointer;
+  padding: 0;
+  appearance: none;
+  transform: translateX(-50%);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.aboutSubscribe__submit:hover,
+.aboutSubscribe__submit:focus-visible,
+.aboutSubscribe__submit:active {
+  border-color: rgba(84, 84, 84, 0.72);
+  outline: none;
+  background: rgba(84, 84, 84, 0.075);
 }
 
 .collectionLayout {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .collectionHero,
@@ -285,25 +477,27 @@ a {
 .collectionShorts img,
 .collectionTees img,
 .collectionStrip img,
-.collectionWhiteTop img,
-.collectionShirts img {
+.collectionWhiteTop img {
   display: block;
   width: 100%;
   height: auto;
 }
 
 .collectionHero__catalog {
-  position: absolute;
-  top: 12.6vw;
-  left: 4.4vw;
-  right: 4.4vw;
+  position: fixed;
+  top: 8.75vw;
+  left: 50.15%;
+  z-index: 42;
+  width: 90.2vw;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 5.2vw;
   font-family: "Helvetica Neue Cyr", sans-serif;
-  font-size: 0.95vw;
-  line-height: 1.28;
+  font-size: 1.55vw;
+  font-weight: 300;
+  line-height: 1.18;
   color: #545454;
+  transform: translateX(-50%);
 }
 
 .collectionHero__catalog p {
@@ -311,18 +505,409 @@ a {
   white-space: nowrap;
 }
 
+.collectionHero__catalogCurrent {
+  color: #000;
+}
+
+.collectionHero__catalogButton {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.collectionHero__catalogButton.is-active {
+  color: #000;
+}
+
+.collection-page.is-shirts-catalog .collectionHero > img,
+.collection-page.is-trousers-catalog .collectionHero > img,
+.collection-page.is-catalog-mode .collectionHero > img {
+  display: none;
+}
+
+.collection-page.is-shirts-catalog .collectionHero,
+.collection-page.is-trousers-catalog .collectionHero,
+.collection-page.is-catalog-mode .collectionHero {
+  height: 0;
+}
+
+.collectionDefaultContent,
+.collectionShirtsCatalog,
+.collectionTrousersCatalog,
+.collectionCatalog,
+.collectionProduct {
+  display: block;
+}
+
+.collection-page.is-shirts-catalog .collectionDefaultContent,
+.collection-page.is-trousers-catalog .collectionDefaultContent,
+.collection-page.is-catalog-mode .collectionDefaultContent,
+.collection-page.is-shirt-detail .collectionDefaultContent {
+  display: none;
+}
+
+.collectionShirtsCatalog,
+.collectionTrousersCatalog,
+.collectionCatalog,
+.collectionProduct {
+  display: none;
+}
+
+.collection-page.is-shirts-catalog .collectionShirtsCatalog {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 6.2vw;
+  row-gap: 1.75vw;
+  align-items: center;
+  height: 100vh;
+  padding: 13.2vw 5.7vw 3vw;
+  background: #f6f3ee;
+}
+
+.collectionShirtsCatalog__item,
+.collectionCatalog__item {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.collectionShirtsCatalog__item:focus-visible,
+.collectionCatalog__item:focus-visible {
+  outline: 0.078125vw solid rgba(84, 84, 84, 0.45);
+  outline-offset: 0.5vw;
+}
+
+.collectionShirtsCatalog img {
+  display: block;
+  width: auto;
+  max-width: 24vw;
+  height: 17.95vw;
+  object-fit: contain;
+  justify-self: center;
+  transition:
+    transform 0.24s ease,
+    filter 0.24s ease;
+}
+
+.collectionShirtsCatalog img:hover {
+  filter: drop-shadow(0 1.1vw 1.4vw rgba(84, 84, 84, 0.12));
+  transform: scale(1.055);
+}
+
+.collectionShirtsCatalog__item:nth-child(n + 4) img {
+  height: 21.4vw;
+}
+
+.collectionShirtsCatalog__item:nth-child(5) img {
+  height: 22.2vw;
+}
+
+.collectionShirtsCatalog__item:nth-child(1) img {
+  height: 23.15vw;
+  transform: translateY(0.9vw);
+}
+
+.collectionShirtsCatalog__item:nth-child(1):hover img {
+  filter: drop-shadow(0 1.1vw 1.4vw rgba(84, 84, 84, 0.12));
+  transform: translateY(0.9vw) scale(1.055);
+}
+
+.collectionShirtsCatalog__item:nth-child(4) img {
+  transform: translateY(1.45vw);
+}
+
+.collectionShirtsCatalog__item:nth-child(4):hover img {
+  filter: drop-shadow(0 1.1vw 1.4vw rgba(84, 84, 84, 0.12));
+  transform: translateY(1.45vw) scale(1.055);
+}
+
+.collection-page.is-trousers-catalog .collectionTrousersCatalog {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 7.6vw;
+  align-items: start;
+  height: 100vh;
+  padding: 16.1vw 5.65vw 4vw;
+  background: #f6f3ee;
+}
+
+.collectionTrousersCatalog img {
+  display: block;
+  width: auto;
+  max-width: 26vw;
+  height: 25.6vw;
+  object-fit: contain;
+  justify-self: center;
+  transition:
+    transform 0.24s ease,
+    filter 0.24s ease;
+}
+
+.collectionTrousersCatalog .collectionCatalog__item:hover img {
+  filter: drop-shadow(0 1.1vw 1.4vw rgba(84, 84, 84, 0.12));
+  transform: scale(1.055);
+}
+
+.collectionTrousersCatalog .collectionCatalog__item:nth-child(2) img {
+  height: 22.7vw;
+}
+
+.collection-page.is-catalog-mode .collectionCatalog.is-active {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 7.6vw;
+  align-items: start;
+  height: 100vh;
+  padding: 16.1vw 5.65vw 4vw;
+  background: #f6f3ee;
+}
+
+.collectionCatalog img {
+  display: block;
+  width: auto;
+  max-width: 27vw;
+  height: 21vw;
+  object-fit: contain;
+  justify-self: center;
+  transition:
+    transform 0.24s ease,
+    filter 0.24s ease;
+}
+
+.collectionCatalog__item:hover img {
+  filter: drop-shadow(0 1.1vw 1.4vw rgba(84, 84, 84, 0.12));
+  transform: scale(1.055);
+}
+
+.collectionCatalog--tops img {
+  height: 20.3vw;
+}
+
+.collectionCatalog--tops .collectionCatalog__item:nth-child(1) {
+  justify-self: start;
+  margin-left: 2vw;
+}
+
+.collectionCatalog--tops .collectionCatalog__item:nth-child(2) {
+  justify-self: start;
+  margin-left: 1.3vw;
+}
+
+.collectionCatalog--tops .collectionCatalog__item:nth-child(2) img {
+  height: 22.4vw;
+}
+
+.collectionCatalog--jeans img {
+  height: 23.7vw;
+}
+
+.collectionCatalog--jeans .collectionCatalog__item:nth-child(1) img {
+  height: 24.2vw;
+}
+
+.collectionCatalog--shorts img {
+  height: 20.9vw;
+}
+
+.collectionCatalog--tshirts .collectionCatalog__item {
+  justify-self: start;
+  margin-left: 0.2vw;
+}
+
+.collectionCatalog--tshirts img {
+  height: 19.4vw;
+}
+
+.collectionCatalog--jackets img {
+  height: 21vw;
+}
+
+.collectionCatalog--jackets .collectionCatalog__item:nth-child(1) {
+  justify-self: start;
+  margin-left: 1.2vw;
+}
+
+.collectionCatalog--jackets .collectionCatalog__item:nth-child(2) {
+  justify-self: start;
+  margin-left: 0.8vw;
+}
+
+.collectionCatalog--knitwear .collectionCatalog__item {
+  justify-self: start;
+  margin-left: 1.4vw;
+}
+
+.collectionCatalog--knitwear img {
+  height: 21.2vw;
+}
+
+.collection-page.is-shirt-detail {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.collection-page.is-shirt-detail .collectionHero > img,
+.collection-page.is-shirt-detail .collectionShirtsCatalog,
+.collection-page.is-shirt-detail .collectionTrousersCatalog,
+.collection-page.is-shirt-detail .collectionCatalog {
+  display: none;
+}
+
+.collection-page.is-shirt-detail .collectionHero {
+  height: 0;
+}
+
+.collection-page.is-shirt-detail .siteFooter {
+  display: none;
+}
+
+.collection-page.is-shirt-detail .collectionProduct {
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 8.8vw;
+  align-items: start;
+  height: 100vh;
+  padding: 18.4vw 5.6vw 3.8vw;
+  background: #f6f3ee;
+}
+
+.collectionProduct__close {
+  position: absolute;
+  top: 18.25vw;
+  right: 6.1vw;
+  z-index: 3;
+  width: 1.72vw;
+  height: 1.72vw;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.collectionProduct__close img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.collectionProduct__image {
+  width: 36vw;
+  height: 35.6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ececea;
+}
+
+.collectionProduct__image img {
+  display: block;
+  width: auto;
+  height: 29.4vw;
+}
+
+.collectionProduct__info {
+  padding-top: 0.05vw;
+  font-family: "Helvetica Neue Cyr", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  line-height: 1.08;
+  color: #545454;
+}
+
+.collectionProduct__info h1 {
+  margin: 0 0 3.1vw;
+  font: inherit;
+  text-transform: none;
+}
+
+.collectionProduct__info p {
+  margin: 0 0 2.2vw;
+}
+
+.collectionProduct__options {
+  width: 29.2vw;
+  margin-top: 5.7vw;
+  border: 0.078125vw solid rgba(84, 84, 84, 0.5);
+  font-family: "Beth Ellen", cursive;
+  font-size: 1.18vw;
+  line-height: 1;
+  color: #545454;
+}
+
+.collectionProduct__sizes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 0.078125vw solid rgba(84, 84, 84, 0.5);
+}
+
+.collectionProduct__sizes span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2vw;
+  border-right: 0.078125vw solid rgba(84, 84, 84, 0.5);
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.collectionProduct__sizes span:hover {
+  background: rgba(84, 84, 84, 0.12);
+  color: #000;
+}
+
+.collectionProduct__sizes span:last-child {
+  border-right: 0;
+}
+
+.collectionProduct__color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2vw;
+  padding-bottom: 0.22vw;
+  box-sizing: border-box;
+}
+
+.collectionProduct__soldOut {
+  width: 15.8vw;
+  height: 2.55vw;
+  margin-top: 3.25vw;
+  border: 0.078125vw solid rgba(84, 84, 84, 0.5);
+  background: transparent;
+  font-family: "Beth Ellen", cursive;
+  font-size: 1.18vw;
+  line-height: 1;
+  color: #545454;
+  cursor: default;
+}
+
 .collectionSection {
-  padding: 2.6vw 0;
+  padding: 3.4vw 0 2.2vw;
 }
 
 .collectionSection__meta {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  margin: 0 4.375vw 1vw;
+  margin: 0 1.75vw 2.1vw;
   font-family: "Helvetica Neue Cyr", sans-serif;
-  font-size: 0.95vw;
+  font-size: 1.55vw;
   font-weight: 300;
+  line-height: 1.18;
   color: #545454;
 }
 
@@ -334,20 +919,71 @@ a {
   text-align: right;
 }
 
+.collectionInlineLink {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.collectionInlineLink:hover,
+.collectionInlineLink:focus-visible {
+  color: #000;
+  outline: none;
+}
+
+.collectionSection__meta .collectionInlineLink:first-child {
+  text-align: center;
+}
+
 .collectionSection__meta--single {
   grid-template-columns: 1fr;
 }
 
-.collectionSection__meta--single span {
+.collectionSection__meta--single span,
+.collectionSection__meta--single .collectionInlineLink {
   text-align: center;
+}
+
+.collectionSection--shorts .collectionSection__meta {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 8vw;
+  margin: 0 1.75vw 2.1vw;
+}
+
+.collectionSection--shorts .collectionSection__meta span:first-child,
+.collectionSection--shorts
+  .collectionSection__meta
+  .collectionInlineLink:first-child {
+  text-align: right;
+}
+
+.collectionSection--shorts .collectionSection__meta span:last-child {
+  display: block;
 }
 
 .collectionShorts {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
-  gap: 4.4vw;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 8vw;
   align-items: start;
-  padding: 0 0.9375vw;
+  padding: 0 1.75vw;
+}
+
+.collectionSection--tshirts .collectionSection__meta {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.88fr);
+  gap: 3.125vw;
+  padding: 0 1.75vw;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.collectionSection--tshirts .collectionSection__meta .collectionInlineLink {
+  grid-column: 2;
+  text-align: left;
 }
 
 .collectionShorts__editorial img,
@@ -356,7 +992,7 @@ a {
 }
 
 .collectionShorts__product {
-  padding-top: 0.2vw;
+  padding-top: 1.2vw;
 }
 
 .collectionStory__text {
@@ -373,7 +1009,7 @@ a {
 .collectionStory__text h2 {
   margin: 0;
   font-family: "Snell Roundhand W01 Script", cursive;
-  font-size: 3.671875vw;
+  font-size: 5.2vw;
   font-weight: 400;
   line-height: 1;
 }
@@ -391,20 +1027,20 @@ a {
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.88fr);
   gap: 3.125vw;
   align-items: center;
-  padding: 0 1.875vw;
+  padding: 0 1.75vw;
 }
 
 .collectionTees__copy {
-  padding-left: 1.875vw;
+  padding-left: 0;
 }
 
 .collectionTees__copy p {
   margin: 0;
   font-family: "Helvetica Neue Cyr", sans-serif;
-  font-size: 3.203125vw;
+  font-size: 2.45vw;
   line-height: 1.04;
   letter-spacing: 0.04em;
-  color: #000;
+  color: #545454;
 }
 
 .collectionStrip {
@@ -413,47 +1049,31 @@ a {
 
 .collectionStrip__viewport {
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
+  max-width: 100vw;
+  cursor: grab;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  touch-action: pan-y pan-x;
+}
+
+.collectionStrip__viewport::-webkit-scrollbar {
+  display: none;
 }
 
 .collectionStrip__image {
-  width: 146%;
+  display: block;
+  width: 214vw;
+  min-width: 214vw;
   max-width: none;
-  transform: translateX(0);
-  transition: transform 0.28s ease;
-}
-
-.collectionStrip__viewport[data-lookbook-index="1"] .collectionStrip__image {
-  transform: translateX(-14%);
-}
-
-.collectionStrip__viewport[data-lookbook-index="2"] .collectionStrip__image {
-  transform: translateX(-28%);
-}
-
-.collectionStrip__arrow {
-  position: absolute;
-  top: 50%;
-  right: 2.2vw;
-  width: 3.6vw;
-  height: 3.6vw;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.38);
-  color: rgba(84, 84, 84, 0.88);
-  font-family: "Helvetica Neue Cyr", sans-serif;
-  font-size: 1.8vw;
-  line-height: 1;
-  transform: translateY(-50%);
-  opacity: 0;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.collectionStrip__viewport:hover .collectionStrip__arrow,
-.collectionStrip__arrow:focus-visible {
+  height: auto;
+  margin-left: -5.6vw;
   opacity: 1;
+  filter: none;
 }
 
 .collectionWhiteTop {
@@ -461,59 +1081,36 @@ a {
   grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
   gap: 4.21875vw;
   align-items: start;
-  padding: 0 4.375vw;
+  padding: 0 1.75vw;
 }
 
-.collectionShirts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.71875vw;
-  padding: 0 21.09375vw 8vw;
+.collectionSection--white-top .collectionSection__meta {
+  grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
+  gap: 4.21875vw;
+  padding: 0 1.75vw;
+  margin-right: 0;
+  margin-left: 0;
 }
 
-.collectionShirts__card {
-  border: 0;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.shirtPreview {
-  position: fixed;
-  left: 50%;
-  bottom: 1.875vw;
-  z-index: 10;
-  width: 18vw;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.shirtPreview__image {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 100%;
-  opacity: 0;
-  transform: translateX(-50%) translateY(1vw);
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
-
-body[data-shirt-preview="white"] .shirtPreview__image--white,
-body[data-shirt-preview="black"] .shirtPreview__image--black {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+.collectionSection--white-top .collectionSection__meta span:first-child,
+.collectionSection--white-top .collectionSection__meta .collectionInlineLink {
+  text-align: left;
 }
 
 .manifesto-page {
   background: #f6f3ee;
   color: #545454;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .brochure-page {
   background: #fcfbf7;
   color: #545454;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .brochureLayout {
@@ -523,63 +1120,74 @@ body[data-shirt-preview="black"] .shirtPreview__image--black {
 }
 
 .brochureHero {
+  box-sizing: border-box;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 16vw 39vw 16vw;
   align-items: start;
-  gap: 3.2vw;
-  padding: 7.2vw 6vw 0;
+  justify-content: center;
+  column-gap: 5.8vw;
+  padding: 7.2vw 0 0;
 }
 
 .brochureHero__meta {
   font-family: "Charter", "charter_regular-webfont", serif;
-  font-size: 1.18vw;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  font-size: 1.45vw;
+  line-height: 1.02;
+  letter-spacing: 0;
   color: #545454;
 }
 
 .brochureHero__meta p {
-  margin: 0 0 2.65vw;
+  margin: 0 0 3.55vw;
 }
 
 .brochureHero__meta--left {
-  justify-self: start;
+  justify-self: end;
   align-self: start;
-  width: 10vw;
+  width: 17vw;
   padding-right: 0;
-  padding-left: 0.8vw;
-  padding-top: 14.3vw;
+  padding-left: 0;
+  padding-top: 14.75vw;
 }
 
 .brochureHero__meta--left p:nth-child(2) {
-  margin-left: 1.9vw;
+  margin-left: 3.35vw;
 }
 
 .brochureHero__meta--right {
   justify-self: start;
   align-self: start;
-  width: 13.4vw;
-  max-width: 13.4vw;
-  padding-left: 0.4vw;
-  padding-top: 14.3vw;
+  width: 18vw;
+  max-width: 18vw;
+  padding-left: 0;
+  padding-top: 14.75vw;
+  line-height: 1.14;
+}
+
+.brochureHero__meta--right p {
+  margin-bottom: 2vw;
+}
+
+.brochureHero__meta--right p:last-child {
+  margin-bottom: 0;
 }
 
 .brochureStack {
   position: relative;
   justify-self: center;
-  width: 30vw;
-  height: 40vw;
+  width: 39vw;
+  height: 51vw;
   align-self: start;
-  margin-top: 1.8vw;
+  margin-top: -0.2vw;
 }
 
 .brochureCard {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 18.8vw;
-  height: 26.7vw;
+  width: 25.2vw;
+  height: 35.8vw;
   padding: 0;
   border: 0;
   background: transparent;
@@ -605,30 +1213,80 @@ body[data-shirt-preview="black"] .shirtPreview__image--black {
   transform: translate(-50%, -50%) scale(0.94) rotate(0deg);
 }
 
-.brochureCard--1 { transform: translate(-50%, -49%) rotate(-9deg); z-index: 16; }
-.brochureCard--2 { transform: translate(-48%, -50%) rotate(7deg); z-index: 15; }
-.brochureCard--3 { transform: translate(-50%, -49%) rotate(-2deg); z-index: 14; }
-.brochureCard--4 { transform: translate(-49%, -50%) rotate(4deg); z-index: 13; }
-.brochureCard--5 { transform: translate(-51%, -49%) rotate(-6deg); z-index: 12; }
-.brochureCard--6 { transform: translate(-49%, -49%) rotate(3deg); z-index: 11; }
-.brochureCard--7 { transform: translate(-52%, -50%) rotate(-8deg); z-index: 10; }
-.brochureCard--8 { transform: translate(-48%, -49%) rotate(8deg); z-index: 9; }
-.brochureCard--9 { transform: translate(-50%, -50%) rotate(-1deg); z-index: 8; }
-.brochureCard--10 { transform: translate(-49%, -50%) rotate(5deg); z-index: 7; }
-.brochureCard--11 { transform: translate(-51%, -49%) rotate(-7deg); z-index: 6; }
-.brochureCard--12 { transform: translate(-48%, -50%) rotate(2deg); z-index: 5; }
-.brochureCard--13 { transform: translate(-50%, -50%) rotate(-5deg); z-index: 4; }
-.brochureCard--14 { transform: translate(-48%, -49%) rotate(6deg); z-index: 3; }
-.brochureCard--15 { transform: translate(-50%, -50%) rotate(-3deg); z-index: 2; }
-.brochureCard--16 { transform: translate(-49%, -50%) rotate(3deg); z-index: 1; }
+.brochureCard--1 {
+  transform: translate(-50%, -49%) rotate(-9deg);
+  z-index: 16;
+}
+.brochureCard--2 {
+  transform: translate(-48%, -50%) rotate(7deg);
+  z-index: 15;
+}
+.brochureCard--3 {
+  transform: translate(-50%, -49%) rotate(-2deg);
+  z-index: 14;
+}
+.brochureCard--4 {
+  transform: translate(-49%, -50%) rotate(4deg);
+  z-index: 13;
+}
+.brochureCard--5 {
+  transform: translate(-51%, -49%) rotate(-6deg);
+  z-index: 12;
+}
+.brochureCard--6 {
+  transform: translate(-49%, -49%) rotate(3deg);
+  z-index: 11;
+}
+.brochureCard--7 {
+  transform: translate(-52%, -50%) rotate(-8deg);
+  z-index: 10;
+}
+.brochureCard--8 {
+  transform: translate(-48%, -49%) rotate(8deg);
+  z-index: 9;
+}
+.brochureCard--9 {
+  transform: translate(-50%, -50%) rotate(-1deg);
+  z-index: 8;
+}
+.brochureCard--10 {
+  transform: translate(-49%, -50%) rotate(5deg);
+  z-index: 7;
+}
+.brochureCard--11 {
+  transform: translate(-51%, -49%) rotate(-7deg);
+  z-index: 6;
+}
+.brochureCard--12 {
+  transform: translate(-48%, -50%) rotate(2deg);
+  z-index: 5;
+}
+.brochureCard--13 {
+  transform: translate(-50%, -50%) rotate(-5deg);
+  z-index: 4;
+}
+.brochureCard--14 {
+  transform: translate(-48%, -49%) rotate(6deg);
+  z-index: 3;
+}
+.brochureCard--15 {
+  transform: translate(-50%, -50%) rotate(-3deg);
+  z-index: 2;
+}
+.brochureCard--16 {
+  transform: translate(-49%, -50%) rotate(3deg);
+  z-index: 1;
+}
 
 .manifestoLayout {
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .manifestoHero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -667,7 +1325,7 @@ body[data-shirt-preview="black"] .shirtPreview__image--black {
   width: 66vw;
   margin: 2.7vw 0 0;
   font-family: "Helvetica Neue Cyr", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.14vw;
   line-height: 1.04;
   letter-spacing: -0.01em;

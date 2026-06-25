@@ -2,9 +2,17 @@ const isPreviewPage = window.location.pathname.endsWith("/index.html") ||
   window.location.pathname === "/" ||
   window.location.pathname.endsWith("/4-module");
 
-requestAnimationFrame(() => {
-  document.body.classList.add("page-ready");
-});
+const markPageReady = () => {
+  requestAnimationFrame(() => {
+    document.body.classList.add("page-ready");
+  });
+};
+
+if (document.fonts?.ready) {
+  document.fonts.ready.then(markPageReady).catch(markPageReady);
+} else {
+  markPageReady();
+}
 
 const navigationEntries = performance.getEntriesByType("navigation");
 const isReload = navigationEntries[0]?.type === "reload";
@@ -13,24 +21,28 @@ if (isReload && !isPreviewPage) {
   window.location.replace("index.html");
 }
 
-const shirtPreviewTriggers = document.querySelectorAll("[data-shirt-preview]");
+const subscribeCloseButton = document.querySelector("[data-subscribe-close]");
+const subscribeForm = document.querySelector("[data-subscribe-form]");
 
-shirtPreviewTriggers.forEach((trigger) => {
-  const previewName = trigger.getAttribute("data-shirt-preview");
+if (subscribeCloseButton) {
+  subscribeCloseButton.addEventListener("click", () => {
+    subscribeCloseButton.closest(".aboutSubscribe")?.classList.add("is-hidden");
+  });
+}
 
-  const activatePreview = () => {
-    document.body.dataset.shirtPreview = previewName;
-  };
+if (subscribeForm) {
+  subscribeForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const clearPreview = () => {
-    delete document.body.dataset.shirtPreview;
-  };
+    if (!subscribeForm.checkValidity()) {
+      subscribeForm.reportValidity();
+      return;
+    }
 
-  trigger.addEventListener("mouseenter", activatePreview);
-  trigger.addEventListener("focus", activatePreview);
-  trigger.addEventListener("mouseleave", clearPreview);
-  trigger.addEventListener("blur", clearPreview);
-});
+    alert("Subscription confirmed.");
+    subscribeForm.reset();
+  });
+}
 
 const brochureStack = document.querySelector("[data-brochure-stack]");
 
@@ -39,9 +51,7 @@ if (brochureStack) {
   let brochureIndex = 0;
 
   const hideNextBrochureCard = () => {
-    if (brochureIndex >= brochureCards.length) {
-      brochureCards.forEach((card) => card.classList.remove("is-gone"));
-      brochureIndex = 0;
+    if (brochureIndex >= brochureCards.length - 1) {
       return;
     }
 
@@ -49,26 +59,62 @@ if (brochureStack) {
     brochureIndex += 1;
   };
 
-  brochureStack.addEventListener("mouseenter", hideNextBrochureCard);
   brochureStack.addEventListener("click", hideNextBrochureCard);
 }
 
-const lookbookViewport = document.querySelector("[data-lookbook-viewport]");
-const lookbookNextButton = document.querySelector("[data-lookbook-next]");
+const catalogButtons = document.querySelectorAll("[data-catalog-target]");
+const productImage = document.querySelector("[data-product-image]");
+const productTitle = document.querySelector("[data-product-title]");
+const productComposition = document.querySelector("[data-product-composition]");
+const productColor = document.querySelector("[data-product-color]");
+const productClose = document.querySelector(".collectionProduct__close");
 
-if (lookbookViewport && lookbookNextButton) {
-  let lookbookIndex = 0;
-  const maxLookbookIndex = 2;
+if (catalogButtons.length > 0) {
+  let productReturnTarget = "shirts";
 
-  const updateLookbook = () => {
-    lookbookViewport.dataset.lookbookIndex = String(lookbookIndex);
+  const setCatalogView = (target) => {
+    const catalogTargets = ["tops", "jeans", "shorts", "tshirts", "jackets", "knitwear"];
+
+    document.body.classList.toggle("is-shirts-catalog", target === "shirts");
+    document.body.classList.toggle("is-trousers-catalog", target === "trousers");
+    document.body.classList.toggle("is-catalog-mode", catalogTargets.includes(target));
+    document.body.classList.toggle("is-shirt-detail", target === "shirt-detail");
+
+    document.querySelectorAll("[data-catalog-view]").forEach((view) => {
+      view.classList.toggle("is-active", view.dataset.catalogView === target);
+    });
+
+    catalogButtons.forEach((button) => {
+      const buttonTarget = button.dataset.catalogTarget;
+      const isActive = buttonTarget === target ||
+        (target === "shirt-detail" && buttonTarget === productReturnTarget);
+
+      button.classList.toggle("is-active", isActive);
+    });
+
+    window.scrollTo({ top: 0, behavior: "auto" });
   };
 
-  updateLookbook();
+  catalogButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.productSrc && productImage && productTitle && productComposition && productColor) {
+        productReturnTarget = button.dataset.productReturn || "shirts";
+        productImage.src = button.dataset.productSrc;
+        productImage.alt = button.dataset.productAlt || button.dataset.productColor || "Product";
+        productTitle.textContent = button.dataset.productTitle || "Lot.";
+        productComposition.innerHTML = (button.dataset.productComposition || "")
+          .split("|")
+          .map((line) => line.trim())
+          .join("<br />");
+        productColor.textContent = button.dataset.productColor || "Color";
 
-  lookbookNextButton.addEventListener("click", () => {
-    lookbookIndex = lookbookIndex >= maxLookbookIndex ? 0 : lookbookIndex + 1;
-    updateLookbook();
+        if (productClose) {
+          productClose.dataset.catalogTarget = productReturnTarget;
+        }
+      }
+
+      setCatalogView(button.dataset.catalogTarget);
+    });
   });
 }
 

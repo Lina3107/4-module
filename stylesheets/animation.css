@@ -1,17 +1,22 @@
 body {
   opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity 0.42s ease,
-    transform 0.42s ease;
+  transition: opacity 0.42s ease;
 }
 
 body.page-ready {
   opacity: 1;
-  transform: translateY(0);
 }
 
 body.page-exit {
   opacity: 0;
-  transform: translateY(0.8vw);
+}
+
+@keyframes aboutCopyScroll {
+  from {
+    transform: translateY(var(--about-copy-start, 0));
+  }
+
+  to {
+    transform: translateY(var(--about-copy-end, var(--about-copy-loop)));
+  }
 }
