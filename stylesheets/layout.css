@@ -696,6 +696,7 @@ a {
 .collectionCatalog--tops .collectionCatalog__item:nth-child(1) {
   justify-self: start;
   margin-left: 2vw;
+  margin-top: 2vw;
 }
 
 .collectionCatalog--tops .collectionCatalog__item:nth-child(2) {
@@ -704,7 +705,7 @@ a {
 }
 
 .collectionCatalog--tops .collectionCatalog__item:nth-child(2) img {
-  height: 22.4vw;
+  height: 23vw;
 }
 
 .collectionCatalog--jeans img {
