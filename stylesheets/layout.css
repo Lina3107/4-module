@@ -381,6 +381,19 @@ a {
   object-fit: contain;
 }
 
+.aboutSubscribe__header {
+  position: absolute;
+  top: 7.1%;
+  left: 7.6%;
+  z-index: 2;
+  font-family: "Helvetica Neue Cyr", sans-serif;
+  font-size: 1.32vw;
+  font-weight: 400;
+  line-height: 1;
+  color: #545454;
+  white-space: nowrap;
+}
+
 .aboutSubscribe input {
   position: absolute;
   left: 50%;

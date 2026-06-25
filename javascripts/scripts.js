@@ -63,11 +63,12 @@ if (brochureStack) {
 }
 
 const catalogButtons = document.querySelectorAll("[data-catalog-target]");
-const productImage = document.querySelector("[data-product-image]");
-const productTitle = document.querySelector("[data-product-title]");
-const productComposition = document.querySelector("[data-product-composition]");
-const productColor = document.querySelector("[data-product-color]");
-const productClose = document.querySelector(".collectionProduct__close");
+const productView = document.querySelector(".collectionProduct");
+const productImage = productView?.querySelector("[data-product-image]");
+const productTitle = productView?.querySelector("[data-product-title]");
+const productComposition = productView?.querySelector("[data-product-composition]");
+const productColor = productView?.querySelector("[data-product-color]");
+const productClose = productView?.querySelector(".collectionProduct__close");
 
 if (catalogButtons.length > 0) {
   let productReturnTarget = "shirts";
